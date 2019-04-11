@@ -112,11 +112,11 @@ public class PatientResourceTest {
 		assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
 	}
 
-	@Test // not working, only god knows why
+	@Test
 	public void deveAtualizarPacienteNoHospital() {
 		ResponseEntity<Void> response = restTemplate.exchange(
 				Constant.V1 + hospitalTest.getId() + "/pacientes/" + patientTest.getId(), HttpMethod.PUT,
-				new HttpEntity<>("{\n" + "\t\"name\": \"paciente update\",\n" + "\t\"cpf\": \"cpf update\",\n" + "}",
+				new HttpEntity<>("{\n" + "\t\"name\": \"paciente update\",\n" + "\t\"cpf\": \"cpf update\" }",
 						httpHeaders),
 				Void.class);
 		assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);

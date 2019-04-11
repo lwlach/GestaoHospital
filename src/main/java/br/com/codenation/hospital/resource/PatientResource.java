@@ -83,7 +83,7 @@ public class PatientResource {
 	}
 
 	@PutMapping(path = "pacientes/{patientId}")
-	public ResponseEntity<Patient> updatePatient(@PathVariable("hospital_id") String idHospital, @PathVariable String patientId,
+	public ResponseEntity<Patient> updatePatient(@PathVariable String hospital_id, @PathVariable String patientId,
 			@RequestBody Patient patient) {
 		try {
 			Patient p = service.findById(patientId);

@@ -40,8 +40,6 @@ public class HospitalService {
 	@Autowired
 	private LocationService locationService;
 
-	@Autowired
-	private LocationService locationService;
 	
 	public List<Hospital> findAll(){
 		return repo.findAll();
